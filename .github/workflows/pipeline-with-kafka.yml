@@ -37,7 +37,7 @@ jobs:
           java-version: 1.8
 
       - name: Start docker compose for integration tests
-        run: docker-compose -f docker-compose.yml up -d
+        run: docker-compose -f .github/workflows/pipeline-with-kafka/docker-compose.yml up -d
 
       - name: Build with Gradle
         run: ./gradlew build
