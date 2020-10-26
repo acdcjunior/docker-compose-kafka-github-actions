@@ -7,4 +7,4 @@ docker run --rm \
  -e KAFKA_SASL_MECHANISM='PLAIN' \
  -e KAFKA_SECURITY_PROTOCOL='SASL_PLAINTEXT' \
  --network pipeline-with-kafka_default \
- devshawn/kafka-gitops:0.2.12 kafka-gitops -v -f /data/state.yaml plan
+ devshawn/kafka-gitops:0.2.12 kafka-gitops -v -f /data/.github/workflows/pipeline-with-kafka/state.yaml plan
