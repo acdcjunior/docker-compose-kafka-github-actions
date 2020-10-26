@@ -1,0 +1,28 @@
+plugins {
+	id 'java'
+}
+
+repositories {
+    jcenter()
+}
+
+compileJava {
+	sourceCompatibility = JavaVersion.VERSION_1_8
+}
+
+ext.junitVersion = '5.4.2'
+ext.kafkaClientsVersionJava7 = '1.1.1' // ultima que suporta java 7
+
+dependencies {
+	implementation "org.apache.kafka:kafka-clients:${kafkaClientsVersionJava7}"
+
+	implementation 'org.slf4j:slf4j-simple:1.7.30'
+
+
+	testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+	testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+}
+
+test {
+	useJUnitPlatform()
+}
