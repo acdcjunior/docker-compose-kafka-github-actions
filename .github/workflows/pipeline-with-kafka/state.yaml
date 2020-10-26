@@ -1,0 +1,4 @@
+topics:
+  my-example-topic:
+    partitions: 3
+    replication: 1

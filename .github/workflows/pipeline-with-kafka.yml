@@ -39,6 +39,9 @@ jobs:
       - name: Start docker compose for integration tests
         run: docker-compose -f .github/workflows/pipeline-with-kafka/docker-compose.yml up -d
 
+      - name: setup topics for test
+        run: ./.github/workflows/pipeline-with-kafka/kafka-gitops-create-topics.sh
+
       - name: Build with Gradle
         run: ./gradlew build
 
